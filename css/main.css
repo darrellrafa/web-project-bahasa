@@ -1689,6 +1689,10 @@ textarea.form-control {
     margin: 40px 0;
 }
 
+.logo {
+    width: 350px;
+}
+
 .mbm_social {
     background-color: transparent;
 }
