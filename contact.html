@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <title>Project Bahasa</title>
+    <title>PROJECT BAHASA | GLOFAMI</title>
     <style>
     .jumbotron {width: 100%;height: 250px;}
         .jumbotron h2 {padding-bottom: 0;}
@@ -25,23 +25,20 @@
         <div class="container text-white">
             <div class="row">
                 <div class="col-sm-4 align-self-center text-left">
-                    <h6></h6>
+                    <h6>Est 2021</h6>
                 </div>
                 <div class="col-sm-4 col-12 align-self-center box-1 text-center">
-                    <a class="navbar-brand" href="index.html"><img src="images/logoglofami(3).png" alt="logo"></a>
-                <!-- </div>
+                    <a class="navbar-brand" href="index.html"><img src="images/glofami (3).png" alt="logo"></a>
+                </div>
                 <div class="col-sm-4 align-self-center text-right">
                     <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/glofami13"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </div>
-                </div> -->
+                </div>
             </div>
-            
+            <!--/row-->
         </div>
-        
+        <!--container-->
     </header>
     <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
     <nav class="navbar navbar-expand-sm sticky-top navbar-dark">
@@ -52,26 +49,26 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="kata-pengantar.html">Kata Pengantar</a>
+                        <a class="nav-link" href="about.html">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="timeditor.html">Tim Editor</a>
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="services.html">Services</a>
-                    </li> -->
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="contact.html">Kontak</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Support</a>
-                    </li> -->
-                    <!-- <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="blog.html">blog</a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -102,8 +99,7 @@
      <div class="container py-5">
       <div class="row" data-aos="fade-up" data-aos-delay="300">
           <div class="col-md-12">
-                <form action="https://script.google.com/macros/s/AKfycbyKNsUNCiX6RIERkEAcPEXNvDEk4nhbFClT03qBzHPe-m0j-PuJ2-dPTeSjRlj5Xh4X/exec" method="post"> 
-                    <!-- DO NOT CHANGE OR EVERYTHING WILL BREAK -->
+                <form action="https://script.google.com/macros/s/AKfycbyKNsUNCiX6RIERkEAcPEXNvDEk4nhbFClT03qBzHPe-m0j-PuJ2-dPTeSjRlj5Xh4X/exec" method="post"> <!-- JANGAN UBAH INI NTAR GABISA JALAN API NYA -->
     <!-- form fields go here -->
     <div class="form-group row">
         <div class="col-sm-6">
@@ -115,10 +111,37 @@
     </div>
     <div class="form-group row">
         <div class="col-xs-12 col-md-12">
-            <textarea name="pesan" class="form-control" placeholder="Pesan anda" rows="6" required></textarea>
-        </div>
+    <textarea name="pesan" class="form-control" id="pesanTextarea" placeholder="Pesan anda (Minimal 5 kata)" rows="6" required></textarea>
+    <span id="wordCountMessage"></span>
+</div>
+
+<script>
+    // Get the textarea element
+    var textarea = document.getElementById("pesanTextarea");
+    // Get the word count message element
+    var wordCountMessage = document.getElementById("wordCountMessage");
+
+    // "Input Listener" buat ngeupdate jumlah word
+    textarea.addEventListener("input", function () {
+        // Buat spasi sebagai jarak "word"
+        var words = textarea.value.trim().split(/\s+/);
+        // Ambil var word
+        var wordCount = words.length;
+        // Update jumlah kata
+        wordCountMessage.textContent = wordCount + " kata";
+
+        // Cek kalo kata kurang dari 5
+        if (wordCount < 5) {
+            // Kalo kata kurang dari 5 gabisa submit
+            textarea.setCustomValidity("Minimal 5 kata");
+        } else {
+            // Kalo kata lebih dari 5 boleh submit
+            textarea.setCustomValidity("");
+        }
+    });
+</script>
     </div>
-    <button type="submit" class="btn btn-primary">Kirim</button>
+        <button type="submit" class="btn btn-primary">Kirim</button>
 </form>
           </div>
       </div>
@@ -127,13 +150,6 @@
 
 
 <!-- Contact section Ended -->
-    <section>
-            <div class="footer-copyright text-center">
-                <div class="gradient"></div>
-                <p>© 2023, All Rights reserved. Project Bahasa, designed by<a href=""> Glofami</a></p>
-            </div>
-        </footer>
-    </section>
    
 
         <!-- Footer -->
