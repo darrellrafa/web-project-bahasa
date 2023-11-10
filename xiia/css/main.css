@@ -406,10 +406,10 @@ header .fa {
 }
 
 .section-4 figure figcaption p {
-    font-size: 16px;
+    /*font-size: 16px;
     color: black;
     font-weight: 300;
-    line-height: 27px;
+    line-height: 27px;*/
 }
 
 .section-4 .box-1 img {
@@ -1759,7 +1759,6 @@ textarea.form-control {
     -webkit-box-shadow: 0 0 15px 1px #afafaf;
     box-shadow: 0 0 15px 1px #afafaf;
 }
-
 /*=============================
      Services Styles
 =============================*/
