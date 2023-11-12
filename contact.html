@@ -102,7 +102,7 @@
      <div class="container py-5">
       <div class="row" data-aos="fade-up" data-aos-delay="300">
           <div class="col-md-12">
-                <form action="https://script.google.com/macros/s/AKfycbyKNsUNCiX6RIERkEAcPEXNvDEk4nhbFClT03qBzHPe-m0j-PuJ2-dPTeSjRlj5Xh4X/exec" method="post"> <!-- JANGAN UBAH INI NTAR GABISA JALAN API NYA -->
+                <form action="https://script.google.com/macros/s/AKfycbwrO8YMZLIH1vpdWDER99zSkRQlrIHSjy3p4sT5PhAFjQvZOdWGqu-8E-A78FYoape6/exec" method="post"> <!-- JANGAN UBAH INI NTAR GABISA JALAN API NYA -->
     <!-- form fields go here -->
     <div class="form-group row">
         <div class="col-sm-6">
@@ -118,6 +118,32 @@
     <span id="wordCountMessage"></span>
 </div>
 
+         <script>
+    document.getElementById('myForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(event.target);
+
+      fetch('https://script.google.com/macros/s/AKfycbwrO8YMZLIH1vpdWDER99zSkRQlrIHSjy3p4sT5PhAFjQvZOdWGqu-8E-A78FYoape6/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+
+        // Execute the client-side script received from the server
+        if (data.clientScript) {
+          eval(data.clientScript);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+  </script>
+        
 <script>
     // Get the textarea element
     var textarea = document.getElementById("pesanTextarea");
