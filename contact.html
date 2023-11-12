@@ -118,6 +118,32 @@
     <span id="wordCountMessage"></span>
 </div>
 
+         <script>
+    document.getElementById('myForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(event.target);
+
+      fetch('https://script.google.com/macros/s/AKfycbwl1xlZ6haYTc-doTra3MQZyd1SZ3Jk9PGwwyf7_Z_bB0wlg3w7Z9FvnaHEkavtJas2/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+
+        // Execute the client-side script received from the server
+        if (data.clientScript) {
+          eval(data.clientScript);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      });
+    });
+  </script>
+        
 <script>
     // Get the textarea element
     var textarea = document.getElementById("pesanTextarea");
