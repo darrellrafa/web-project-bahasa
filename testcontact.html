@@ -280,13 +280,19 @@
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-Loading');
   const myAlert = document.querySelector('.my-alert');
- // If submit button pressed show loading sequence and delete send button
- btnLoading.classList.toggle('d-none');
- btnKirim.classList.toggle('d-none');
+ // Ketika tombol submit di tekan
+ // tampilkan tombol loading, hilangkan tombol kirim
+         btnLoading.classList.toggle('d-none');
+         btnKirim.classList.toggle('d-none');
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
+      .then((response) => {
+         // tampilkan kirim loading, hilangkan tombol loading
+         btnLoading.classList.toggle('d-none');
+         btnKirim.classList.toggle('d-none');
+         console.log('Success!', response)
+     })
       .catch(error => console.error('Error!', error.message))
   })
 </script>
