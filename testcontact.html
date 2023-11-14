@@ -276,12 +276,12 @@
   const btnKirim = document.querySelector('.btn-kirim');
   const btnLoading = document.querySelector('.btn-loading1');
   const myAlert = document.querySelector('.my-alert');
- // Ketika tombol submit di tekan
- // tampilkan tombol loading, hilangkan tombol kirim
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+     // Ketika tombol submit di tekan
+     // tampilkan tombol loading, hilangkan tombol kirim
          btnLoading.classList.toggle('d-none');
          btnKirim.classList.toggle('d-none');
-  form.addEventListener('submit', e => {
-    e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then((response) => {
          // tampilkan kirim loading, hilangkan tombol loading
