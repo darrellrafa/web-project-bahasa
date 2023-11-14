@@ -116,7 +116,21 @@
                   </div>
                   <div class="mb-3">
                     <label for="pesan" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="pesan" rows="5" name="pesan">Pesan</textarea>
+                    <textarea class="form-control" id="pesan" rows="5" name="pesan"></textarea>
+                          <script>
+        function validateForm() {
+            var pesanInput = document.getElementById("pesan").value;
+
+            // Check if the input has at least 3 words
+            var words = pesanInput.split(/\s+/).length;
+            if (words < 3) {
+                alert("Harap masukkan setidaknya 3 kata pada pesan.");
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
                 </div>
                   <div class="mb-3">
                   <button type="submit" class="btn btn-primary btn-Kirim">Kirim</button>
