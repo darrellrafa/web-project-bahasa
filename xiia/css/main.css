@@ -406,10 +406,10 @@ header .fa {
 }
 
 .section-4 figure figcaption p {
-    /*font-size: 16px;
+    font-size: 16px;
     color: black;
     font-weight: 300;
-    line-height: 27px;*/
+    line-height: 27px;
 }
 
 .section-4 .box-1 img {
@@ -1759,6 +1759,11 @@ textarea.form-control {
     -webkit-box-shadow: 0 0 15px 1px #afafaf;
     box-shadow: 0 0 15px 1px #afafaf;
 }
+
+.section4 .img-fluid {
+    width: 300px;
+    height: 200px;
+}
 /*=============================
      Services Styles
 =============================*/
@@ -2012,8 +2017,8 @@ textarea.form-control {
         padding-top: 30px;
     }
     #about-us .image {
-        width: 400px;
-        height: 330px;
+        width: 700px;
+        height: 600px;
     }
     #about-us p {
         font-size: 12px;
