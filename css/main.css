@@ -838,20 +838,21 @@ header .fa {
     margin-bottom: 200px;
 }
 
-#about-us .image {
+/*#about-us .image {
     float: left;
     width: 478px;
     height: 394px;
     shape-margin: 20px;
     margin-right: 50px;
     margin-bottom: 52px;
-}
+}*/
 
 #about-us .thumbnail {
     padding: 0;
     border: none;
     border-radius: 0;
-    object-fit: cover;
+    background: #fff;
+    object-fit: contain;
 }
 
 #about-us p {
@@ -869,17 +870,17 @@ header .fa {
     float: left;
     width: 335px;
     height: 430px;
-    shape-margin: 20px;
+    /*shape-margin: 20px;
     margin-right: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 40px;*/
 }
 
-#about-us .thumbnail {
+/*#about-us .thumbnail {
     padding: 0;
     border: none;
     border-radius: 0;
     object-fit: cover;
-}
+}*/
 
 /*=============================
         Contact-Page
